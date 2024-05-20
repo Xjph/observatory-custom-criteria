@@ -59,7 +59,7 @@
 ---@field AscendingNode number
 ---Orbital mean anomaly in degrees
 ---@field MeanAnomaly number
----Axial tile of body in degrees
+---Axial tile of body in radians
 ---@field AxialTilt number
 ---Array containing planetary/stellar ring objects
 ---@field Rings Rings
@@ -179,3 +179,9 @@ function rings(rings) end
 ---@param parents parents
 ---@return fun():ParentIterator
 function allparents(parents) end
+
+---@type integer
+biosignals = nil
+
+---@type integer
+geosignals = nil
