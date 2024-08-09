@@ -1,5 +1,13 @@
 ---@meta
 
+---@class const
+---@field SPEED_OF_LIGHT_mps number
+---@field GRAVITY_mps2 number
+---@field ATM_PRESSURE_Pa number
+---@field DAY_s number
+---@field HOUR_s number
+const = {}
+
 ---@class scan
 ---Name of star system
 ---@field StarSystem string
@@ -59,7 +67,7 @@
 ---@field AscendingNode number
 ---Orbital mean anomaly in degrees
 ---@field MeanAnomaly number
----Axial tile of body in radians
+---Axial tilt of body in radians
 ---@field AxialTilt number
 ---Array containing planetary/stellar ring objects
 ---@field Rings Rings
@@ -103,7 +111,7 @@ local Ring = {}
 ---Class of the ring, e.g. 'eRingClass_MetalRich'
 ---@field ringclass string
 ---Mass of the ring in millions of metric tons
----@field massmT number
+---@field massmt number
 ---Orbital radius of inner edge of the ring in meters
 ---@field innerrad number
 ---Orbital radius of the outer edge of the ring in meters
@@ -112,6 +120,7 @@ local RingIterator = {}
 
 ---@class Rings
 ---@field [number] Ring
+---@field Count integer
 local Rings = {}
 
 ---@class Composition
@@ -132,13 +141,14 @@ local Material = {}
 
 ---@class MaterialIterator
 ---Name of material
----@field Name string
+---@field name string
 ---Percentage of named material present
----@field Percent number
+---@field percent number
 local MaterialIterator = {}
 
 ---@class MaterialCollection
 ---@field [number] Material
+---@field Count integer
 local MaterialCollection = {}
 
 ---@class Parent
@@ -176,9 +186,77 @@ function materials(materials) end
 ---@return fun():RingIterator
 function rings(rings) end
 
+---@param rings Rings
+---@return fun():RingIterator
+function ringsOnly(rings) end
+
+---@param rings Rings
+---@return fun():RingIterator
+function beltsOnly(rings) end
+
 ---@param parents parents
 ---@return fun():ParentIterator
 function allparents(parents) end
+
+---@param rings Rings
+---@return boolean
+function hasBelts(rings) end
+
+---@param body_name string
+---@return boolean
+function isBelt(body_name) end
+
+---@param rings Rings
+---@return boolean
+function hasRings(rings) end
+
+---@param body_name string
+---@return boolean
+function isRing(body_name) end
+
+---@param scan scan
+---@return boolean
+function isStar(scan) end
+
+---@param scan scan
+---@return boolean
+function isPlanet(scan) end
+
+---@param scan scan
+---@return boolean
+function isBarycentre(scan) end
+
+---@param scan scan
+---@return boolean
+function hasAtmosphere(scan) end
+
+---@param scan scan
+---@return boolean
+function hasLandableAtmosphere(scan) end
+
+---@param value_in_m number
+---@return number
+function distanceAsLs(value_in_m) end
+
+---@param value_in_m number
+---@return number
+function distanceAsKm(value_in_m) end
+
+---@param value_in_mps2 number
+---@return number
+function gravityAsG(value_in_mps2) end
+
+---@param value_in_pa number
+---@return number
+function pressureAsAtm(value_in_pa) end
+
+---@param value_in_s number
+---@return number
+function periodAsDay(value_in_s) end
+
+---@param value_in_s number
+---@return number
+function periodAsHour(value_in_s) end
 
 ---@type integer
 biosignals = nil
