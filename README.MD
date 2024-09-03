@@ -5,7 +5,7 @@ If you're not already familiar with using VSCode some direction is likely necess
 
 1. Download and install [VSCode](https://code.visualstudio.com/Download)
 2. Install the VSCode [Lua Language Server extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
-3. Download or Clone this repo and place it somewhere convenient
+3. [Download](https://github.com/Xjph/observatory-custom-criteria/archive/refs/heads/main.zip) or Clone this repo and place it somewhere convenient
 4. Place the `.lua` file with your criteria in it alongside the files from this repo, in the same folder as `criteria.d.lua`
 5. Open *the folder* in VSCode
 
