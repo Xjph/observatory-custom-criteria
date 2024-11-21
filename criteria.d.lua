@@ -174,6 +174,68 @@ parents = {}
 ---@field [number] scan
 system = {}
 
+---@class StarPosition
+---@field X number
+---@field Y number
+---@field Z number
+local StarPosition = {}
+
+---@class jump
+---@field StarSystem string
+---@field SystemAddress number
+---@field StarPos StarPosition
+---@field Body string
+---@field BodyID number
+---@field BodyType string
+---@field JumpDist number
+---@field FuelUsed number
+---@field FuelLevel number
+---@field BoostUsed number
+jump = {}
+
+---@class allBodies
+---@field SystemName string
+---@field SystemAddress number
+---@field Count number
+allBodies = {}
+
+---@class Signal
+---@field Type string
+---@field Type_Localised string
+---@field Count number
+local Signal = {}
+
+---@class Signals
+---@field Count number
+---@field [number] Signal
+local Signals = {}
+
+---@class Genus
+---@field Genus string
+---@field Genus_Localised string
+local Genus = {}
+
+---@class Genuses
+---@field Count number
+---@field [number] Genus
+local Genuses = {}
+
+---@class bodySignals
+---@field SystemAddress number
+---@field BodyName string
+---@field BodyID number
+---@field Signals Signals
+---@field Genuses Genuses
+bodySignals = {}
+
+---@class discovery
+---@field SystemName string
+---@field SystemAddress number
+---@field BodyCount number
+---@field NonBodyCount number
+---@field Progress number
+discovery = {}
+
 ---@param system system
 ---@return fun():scan
 function bodies(system) end
@@ -257,6 +319,12 @@ function periodAsDay(value_in_s) end
 ---@param value_in_s number
 ---@return number
 function periodAsHour(value_in_s) end
+
+---@param title string
+---@param detail string
+---@param extendedDetail string
+---@return nil
+function notify(title, detail, extendedDetail) end
 
 ---@type integer
 biosignals = nil
