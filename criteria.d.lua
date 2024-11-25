@@ -175,9 +175,9 @@ parents = {}
 system = {}
 
 ---@class StarPosition
----@field X number
----@field Y number
----@field Z number
+---@field x number
+---@field y number
+---@field z number
 local StarPosition = {}
 
 ---@class jump
