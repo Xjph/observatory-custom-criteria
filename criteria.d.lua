@@ -171,6 +171,7 @@ local ParentIterator = {}
 parents = {}
 
 ---@class system
+---@field Count number
 ---@field [number] scan
 system = {}
 
