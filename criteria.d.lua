@@ -175,6 +175,12 @@ parents = {}
 ---@field [number] scan
 system = {}
 
+---@class parentsTable
+---@field Count number
+---@field [number] Parent
+---indexer is a bodyId. You can use allParents() on the values.
+parentsTable = {}
+
 ---@class StarPosition
 ---@field x number
 ---@field y number
@@ -326,6 +332,13 @@ function periodAsHour(value_in_s) end
 ---@param extendedDetail string
 ---@return nil
 function notify(title, detail, extendedDetail) end
+
+---@param title string
+---@param detail string
+---@param extendedDetail string
+---@param bodyId number
+---@return nil
+function notifyForBody(title, detail, extendedDetail, bodyId) end
 
 ---@type integer
 biosignals = nil
